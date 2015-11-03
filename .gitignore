@@ -1,0 +1,17 @@
+# Project files      #
+######################
+node_modules
+dist
+npm-debug.log*
+dist
+docs
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
