@@ -332,4 +332,9 @@ istanbul
     "polyfill-function-prototype-bind": "0.0.1",
     "sinon": "1.15.4",
     "systemjs": "0.16.7"
+    
+    
+    
+    #webpack
+    path.resolve(__dirname, "app/folder")
 
