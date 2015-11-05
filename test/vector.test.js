@@ -1,7 +1,8 @@
 import Vector from '../lib/vector';
+import { assert } from 'chai';
 
 describe('main module file', () => {
-    it('should define "JS360" object with "generate360view" function', () => {
-        chai.assert.equal('bar', 'bar');
-    });
+  it('Vector', () => {
+    assert.equal('bar', 'bar');
+  });
 });

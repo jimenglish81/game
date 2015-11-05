@@ -1,17 +1,12 @@
-var adjustWebpackConfig = function(config) {
-  // Change sourcemap type
-  config.devtool = 'inline-source-map';
-
-  // Remove the entry point
-  config.entry = {};
-  // Remove the entry point
-  config.output = {};
-
-  return config;
+var _ = require('lodash');
+var convertToKarmaWebpack = function(config) {
+  return _.assign({}, config, {
+    devtool: 'inline-source-map',
+    entry: {},
+    output: {}
+  });
 };
-
-// Load webpack config
-var webpackConfig = adjustWebpackConfig(require('./webpack.config.js'));
+var webpackConfig = convertToKarmaWebpack(require('./webpack.conf.js'));
 
 module.exports = function(config) {
   config.set({
@@ -24,15 +19,7 @@ module.exports = function(config) {
       'test/**/*.js': ['webpack']
     },
     plugins: ['karma-*'],
-    //webpack: webpackConfig,
-     webpack: {
-     module: {
-         loaders: [{
-           test: /.js$/,
-         loader: 'babel-loader'
-         }]
-       }
-    },
+    webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
     },
