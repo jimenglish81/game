@@ -4,17 +4,15 @@ var convertToKarmaWebpack = function(config) {
     devtool: 'inline-source-map',
     entry: {},
     output: {},
-    module: {
-      loaders: [
+    module: _.assign({}, config.module, {
+      preloader: [
         {
-          loader: 'babel-loader',
-          test: /\.(js)$/
-        },{
-            test: /\.js$/,
-            exclude: /(test|node_modules)\//,
-            loader: 'istanbul-instrumenter'
-        }]
-      }
+          test: /\.js$/,
+          exclude: /(test|node_modules)\//,
+          loader: 'istanbul-instrumenter'
+        }
+      ]
+    })
   });
 };
 var webpackConfig = convertToKarmaWebpack(require('./webpack.conf.js'));
