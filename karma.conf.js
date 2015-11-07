@@ -3,7 +3,18 @@ var convertToKarmaWebpack = function(config) {
   return _.assign({}, config, {
     devtool: 'inline-source-map',
     entry: {},
-    output: {}
+    output: {},
+    module: {
+      loaders: [
+        {
+          loader: 'babel-loader',
+          test: /\.(js)$/
+        },{
+            test: /\.js$/,
+            exclude: /(test|node_modules)\//,
+            loader: 'istanbul-instrumenter'
+        }]
+      }
   });
 };
 var webpackConfig = convertToKarmaWebpack(require('./webpack.conf.js'));
@@ -13,11 +24,9 @@ module.exports = function(config) {
     basePath: '.',
     frameworks: ['mocha', 'chai'],
     files: [
-      { pattern: 'lib/vector.js', watched: false },
       'test/**/*.test.js'
     ],
     preprocessors: {
-      'lib/**/*.js': ['coverage'],
       'test/**/*.js': ['webpack']
     },
     plugins: ['karma-*'],
@@ -29,9 +38,6 @@ module.exports = function(config) {
     port: 9876,
     colors: true,
     coverageReporter: {
-      instrumenterOptions: {
-        istanbul: { esModules: true }
-      },
       type : 'html',
       dir : 'coverage/'
     },
