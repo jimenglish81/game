@@ -17,7 +17,7 @@ describe('Vector', () => {
   it('throws when setting length', () => {
     let vector = new Vector(10, 10);
 
-    chai.assert.throw(() => vector.length = 10, 'Cannot set the length of a Vector: 10');
+    chai.assert.throw(() => vector.length = 10, 'Cannot set the length of a Vector to 10');
   });
 
   it('can add a scalar', () => {
