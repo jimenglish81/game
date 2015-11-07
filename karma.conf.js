@@ -26,9 +26,11 @@ module.exports = function(config) {
     basePath: '.',
     frameworks: ['mocha', 'chai'],
     files: [
+      '/lib/**/*.js',
       'test/**/*.test.js'
     ],
     preprocessors: {
+      '/lib/**/*.js': ['webpack'],
       'test/**/*.js': ['webpack']
     },
     plugins: ['karma-*'],
