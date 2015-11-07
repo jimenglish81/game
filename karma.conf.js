@@ -5,9 +5,13 @@ var convertToKarmaWebpack = function(config) {
     entry: {},
     output: {},
     module: _.assign({}, config.module, {
-      preloader: [
+      loaders: [
         {
-          test: /\.js$/,
+          loader: 'babel-loader',
+          test: /\.(js)$/
+        },
+        {
+          test: /\.(js)$/,
           exclude: /(test|node_modules)\//,
           loader: 'istanbul-instrumenter'
         }
