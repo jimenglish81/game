@@ -86,6 +86,14 @@ describe('Vector', () => {
     chai.assert.closeTo(newVector.y, 0.89, 0.01);
   });
 
+  it('it not change if normalized and its length is 0', () => {
+    let vector = new Vector(0, 0);
+    let newVector = vector.normalize();
+
+    chai.assert.equal(vector.x, 0);
+    chai.assert.equal(vector.y, 0);
+  });
+
   it('can set its angle', () => {
     let vector = new Vector(10, 20);
     let newVector = vector.setAngle(30);
