@@ -5,6 +5,7 @@ dist
 npm-debug.log*
 dist
 docs
+coverage
 
 # OS generated files #
 ######################
