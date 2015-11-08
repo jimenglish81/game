@@ -64,12 +64,6 @@ describe('Vector', () => {
     chai.assert.closeTo(vector.getAngle(), 1.10, 0.1);
   });
 
-  it('computes its magnitude', () => {
-    let vector = new Vector(10, 20);
-
-    chai.assert.closeTo(vector.magnitude(), 22.36, 0.1);
-  });
-
   it('can multiply a scalar', () => {
     let vector = new Vector(10, 10);
     let newVector = vector.multiply(10);
