@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   grunt.config.merge({
     clean: {
       build: {
-        src: ['./dist', './docs']
+        src: ['./coverage', './dist', './docs']
       }
     }
   });
