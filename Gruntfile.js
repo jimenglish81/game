@@ -14,6 +14,7 @@ module.exports = function(grunt) {
   grunt.file.expand('node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
 
   grunt.registerTask('default', ['build']);
+  grunt.registerTask('dev', ['clean', 'webpack']);
   grunt.registerTask('build', ['clean', 'jshint', 'jscs', 'webpack']);
   grunt.registerTask('prod', ['build', 'esdoc']);
   grunt.registerTask('test', ['karma']);
