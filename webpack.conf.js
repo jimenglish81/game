@@ -12,13 +12,6 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    alias: {
-      'backbone-events-standalone': '../node_modules/backbone-events-standalone',
-      bluebird: '../node_modules/bluebird',
-      lodash: '../node_modules/lodash'
-    }
-  },
   stats: {
     colors: true
   },
