@@ -1,4 +1,4 @@
-import mixin from '../lib/mixin';
+import mixin from '../lib/utils/mixin';
 class Foo {
   constructor() {
     this.bar = true;
