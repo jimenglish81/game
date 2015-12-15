@@ -23,5 +23,5 @@ let server = app.listen(3000, () => {
   //     console.log('command: ' + msg);
   //     io.emit('command', msg);
   //   });
-  });
+  //});
 });

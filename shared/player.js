@@ -1,6 +1,6 @@
 export default class Player {
-  constructor(client) {
-    this.client = client;
+  constructor(socket) {
+    this.socket = socket;
     this.id = client.id;
 
     // state of keys pressed
@@ -12,23 +12,23 @@ export default class Player {
 
   frame(duration_s) {
     if (this.left) {
-        // I allow framerate variability, so magnitude of action is multiplied by time
-        // this could be even more precise (but complicated) if duration_s was calculated from client's time
-        this.ship.rotate(-1 * duration_s);
+      // I allow framerate variability, so magnitude of action is multiplied by time
+      // this could be even more precise (but complicated) if duration_s was calculated from client's time
+      this.ship.rotate(-1 * duration_s);
     }
     if (this.right) {
-        this.ship.rotate(1 * duration_s);
+      this.ship.rotate(1 * duration_s);
     }
     if (this.accelerate) {
-        this.ship.accelerate(duration_s);
+      this.ship.accelerate(duration_s);
     }
     if (this.shoot) {
-        this.ship.shoot();
+      this.ship.shoot();
     }
   }
 
   destroy() {
-    
+
   }
 
 }
